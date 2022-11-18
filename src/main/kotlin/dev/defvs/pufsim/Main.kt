@@ -11,7 +11,7 @@ fun main() {
 	
 	// Seeds
 	val pufSeed = 1
-	val challengeSeed = 1
+	val challengeSeed = 2
 	
 	// Generate challenges and PUFs
 	val challengeGenerationRandom = Random(challengeSeed)
@@ -25,11 +25,10 @@ fun main() {
 	}
 	
 	// Output to csv
-	crpList.forEachIndexed { i, pufCRPs ->
-		val text = pufCRPs.joinToString(
+	val text = crpList.mapIndexed { i, pufCRPs ->
+		pufCRPs.joinToString(
 			separator = "\n",
-			prefix = "Challenge,Response\n"
-		) { "${it.first.toBinaryString()},${if (it.second) "1" else "0"}" }
-		File("puf${i}.csv").writeText(text)
-	}
+		) { "$i,${pufInstances[i].seed.toULong()},${it.first.toLongArray()[0].toULong()},${if (it.second) "1" else "0"}" }
+	}.joinToString("\n", prefix = "PufIndex,PufSeed,Challenge,Response\n")
+	File("results.csv").writeText(text)
 }
