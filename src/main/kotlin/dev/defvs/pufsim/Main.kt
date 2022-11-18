@@ -25,10 +25,10 @@ fun main() {
 	}
 	
 	// Output to csv
-	val text = crpList.mapIndexed { i, pufCRPs ->
-		pufCRPs.joinToString(
-			separator = "\n",
-		) { "$i,${pufInstances[i].seed.toULong()},${it.first.toLongArray()[0].toULong()},${if (it.second) "1" else "0"}" }
-	}.joinToString("\n", prefix = "PufIndex,PufSeed,Challenge,Response\n")
-	File("results.csv").writeText(text)
+	crpList.forEachIndexed { i, pufCRPs ->
+		val text = pufCRPs.joinToString(separator = "\n") {
+			"${it.first.toBinaryString(",")},${if (it.second) "1" else "0"}"
+		}
+		File("puf${i}.csv").writeText(text)
+	}
 }

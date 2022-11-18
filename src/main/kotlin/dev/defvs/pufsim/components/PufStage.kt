@@ -8,7 +8,7 @@ import java.util.*
 class PufStage(pufRandom: Random) {
 	private val delayModel = PufStageDelayModel(pufRandom)
 	
-	data class DelayedBit(val bit: Bit, val delay: Double)
+	data class DelayedBit(val bit: Bit, val delay: Double = 0.0)
 	data class PufData(
 		val top: DelayedBit = DelayedBit(true, 0.0),
 		val bottom: DelayedBit = DelayedBit(true, 0.0),
