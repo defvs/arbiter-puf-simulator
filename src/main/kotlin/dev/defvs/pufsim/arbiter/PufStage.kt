@@ -1,4 +1,4 @@
-package dev.defvs.pufsim.components
+package dev.defvs.pufsim.arbiter
 
 import dev.defvs.pufsim.Bit
 import dev.defvs.pufsim.Delay

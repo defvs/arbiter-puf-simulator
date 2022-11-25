@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e46d4731-cc47-429b-bd3d-392785b34d2b" name="Changes" comment="Change csv generation">
+    <list default="true" id="e46d4731-cc47-429b-bd3d-392785b34d2b" name="Changes" comment="Cleanup, calculate characteristics">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/challenges/ChallengeGenerator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/Helpers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/Helpers.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/components/Puf.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/components/Puf.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/components/PufStage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/components/PufStage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/components/Puf.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/arbiter/Puf.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/components/PufArbiter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/arbiter/PufArbiter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/components/PufStage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/arbiter/PufStage.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +28,7 @@
       <list>
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -46,22 +49,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Daniel\IdeaProjects\puf-sim\src\main\kotlin\dev\defvs\pufsim\arbiter" />
       <recent name="C:\Users\Daniel\IdeaProjects\puf-sim\src\main\kotlin\dev\defvs\pufsim\components" />
       <recent name="C:\Users\Daniel\IdeaProjects\puf-sim\src\main\kotlin\dev\defvs\pufsim" />
     </key>
@@ -94,6 +98,7 @@
       <workItem from="1668412022403" duration="10524000" />
       <workItem from="1668764964768" duration="936000" />
       <workItem from="1668773778535" duration="6676000" />
+      <workItem from="1669378558773" duration="10219000" />
     </task>
     <task id="LOCAL-00001" summary="Final version">
       <created>1668429078033</created>
@@ -130,12 +135,14 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Final version" />
     <MESSAGE value="Change csv generation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change csv generation" />
+    <MESSAGE value="Cleanup, calculate characteristics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup, calculate characteristics" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="JetRunConfigurationType">
-        <watch expression="challenges.associateWith { it }" language="kotlin" />
+        <watch expression="uniquenessSum" language="kotlin" />
+        <watch expression="it" language="kotlin" />
       </configuration>
     </watches-manager>
   </component>
