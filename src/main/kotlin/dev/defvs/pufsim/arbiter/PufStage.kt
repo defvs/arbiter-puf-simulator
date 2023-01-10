@@ -14,12 +14,16 @@ class PufStage(pufRandom: Random) {
 		val bottom: DelayedBit = DelayedBit(true, 0.0),
 	)
 	
-	fun run(input: PufData, challenge: Bit): PufData {
+	fun run(input: PufData, challenge: Bit, jitterStdDev: Double = 0.0): PufData {
 		var (bitTop, delayTop) = input.top
 		var (bitBottom, delayBottom) = input.bottom
 		
 		delayTop += delayModel.topMux
 		delayBottom += delayModel.bottomMux
+		
+		// Random delay jitters which change on each run
+		delayTop += Random().nextGaussian(0.0, jitterStdDev)
+		delayBottom += Random().nextGaussian(0.0, jitterStdDev)
 		
 		return if (!challenge) {
 			delayTop += delayModel.parallelPathTop

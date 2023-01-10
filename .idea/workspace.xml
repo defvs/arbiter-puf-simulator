@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e46d4731-cc47-429b-bd3d-392785b34d2b" name="Changes" comment="Cleanup, calculate characteristics">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/challenges/ChallengeGenerator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/enrollment/Client.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/enrollment/EnrollmentTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/enrollment/Server.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/Helpers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/Helpers.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/components/Puf.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/arbiter/Puf.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/components/PufArbiter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/arbiter/PufArbiter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/components/PufStage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/arbiter/PufStage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/arbiter/Puf.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/arbiter/Puf.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/arbiter/PufStage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/defvs/pufsim/arbiter/PufStage.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +27,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
         <option value="Kotlin Object" />
+        <option value="Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -60,7 +62,8 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -69,8 +72,18 @@
       <recent name="C:\Users\Daniel\IdeaProjects\puf-sim\src\main\kotlin\dev\defvs\pufsim\components" />
       <recent name="C:\Users\Daniel\IdeaProjects\puf-sim\src\main\kotlin\dev\defvs\pufsim" />
     </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="dev.defvs.pufsim.enrollment" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Kotlin.EnrollmentTestKt">
+    <configuration name="EnrollmentTestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dev.defvs.pufsim.enrollment.EnrollmentTestKt" />
+      <module name="puf-sim.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.defvs.pufsim.MainKt" />
       <module name="puf-sim.main" />
@@ -82,6 +95,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.EnrollmentTestKt" />
         <item itemvalue="Kotlin.MainKt" />
       </list>
     </recent_temporary>
@@ -98,7 +112,14 @@
       <workItem from="1668412022403" duration="10524000" />
       <workItem from="1668764964768" duration="936000" />
       <workItem from="1668773778535" duration="6676000" />
-      <workItem from="1669378558773" duration="10219000" />
+      <workItem from="1669378558773" duration="10320000" />
+      <workItem from="1669966015529" duration="17000" />
+      <workItem from="1669983299337" duration="8021000" />
+      <workItem from="1670058820085" duration="74000" />
+      <workItem from="1670058921407" duration="65000" />
+      <workItem from="1670319511619" duration="3877000" />
+      <workItem from="1670916812221" duration="40000" />
+      <workItem from="1673363216768" duration="2607000" />
     </task>
     <task id="LOCAL-00001" summary="Final version">
       <created>1668429078033</created>
@@ -114,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668776026276</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Cleanup, calculate characteristics">
+      <created>1669388951594</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669388951594</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

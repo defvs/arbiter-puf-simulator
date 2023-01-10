@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package dev.defvs.pufsim
 
 import java.util.*
@@ -13,6 +15,15 @@ fun BitSet.toBinaryString(separator: CharSequence) = (0 until this.size()).joinT
 fun BitSet.hammingDistance(other: BitSet): Int {
 	if (this.size() != other.size()) throw ArrayIndexOutOfBoundsException("BitSet sizes are different")
 	return (this.clone() as BitSet).apply { xor(other) }.cardinality()
+}
+fun List<Boolean>.toBitSet(): BitSet {
+	val bitSet = BitSet()
+	for ((i, element) in this.withIndex()) {
+		if (element) {
+			bitSet.set(i)
+		}
+	}
+	return bitSet
 }
 
 fun getRandomDelay(mean: Double = 0.0, stdDev: Double = 1.0, random: Random = Random()) =

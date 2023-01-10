@@ -27,8 +27,9 @@ fun main() {
 			calculateCharacteristics(it)
 		}
 		
-		
 	}.also { println("Program took $it") }
+	val readPUFs = (0 until 10).map { readFromCsv("input/puf-${it+1}.csv") }
+	calculateCharacteristics(readPUFs)
 }
 
 fun generateCRPs(challengeSeed: Long, pufSeed: Long, challengesCount: Int, pufCount: Int): List<List<CRP>> {
@@ -51,14 +52,15 @@ fun List<List<CRP>>.writeToCSV() = this.forEachIndexed { i, pufCRPs ->
 	File("puf${i}.csv").writeText(text)
 }
 
-fun readFromCsv(file: String): List<List<CRP>> {
-	TODO()
+fun readFromCsv(file: String): List<CRP> = File(file).readLines().map {
+	val split = it.split(",")
+	split.take(64).map { it == "1" }.toBitSet() to split.takeLast(1).single().let { it == "1" }
 }
 
 fun calculateCharacteristics(crpList: List<List<CRP>>) {
 	// calculate randomness
 	crpList.map {
-		it.map { if(it.second) 1 else 0 }.average()
+		it.map { if (it.second) 1 else 0 }.average()
 	}.average().also { println("Randomness =\n\t$it") }
 	
 	// calculate uniqueness
