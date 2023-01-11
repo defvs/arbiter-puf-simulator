@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-69.0" y="-15.0">dev.defvs.pufsim.arbiter.PufStage.DelayedBit</node>
+    <node x="55.0" y="717.0">dev.defvs.pufsim.arbiter.Puf</node>
+    <node x="15.0" y="517.0">dev.defvs.pufsim.arbiter.PufStage</node>
+    <node x="-145.0" y="233.0">dev.defvs.pufsim.arbiter.PufStage.PufData</node>
+    <node x="203.5" y="185.0">dev.defvs.pufsim.arbiter.PufStageDelayModel</node>
+    <node x="383.0" y="517.0">dev.defvs.pufsim.arbiter.PufArbiter</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="dev.defvs.pufsim.arbiter.PufStage.PufData" target="dev.defvs.pufsim.arbiter.PufStage" relationship="INNER_CLASS">
+      <point x="80.0" y="65.0" />
+      <point x="85.0" y="478.0" />
+      <point x="185.0" y="478.0" />
+      <point x="0.0" y="-41.0" />
+    </edge>
+    <edge source="dev.defvs.pufsim.arbiter.PufStage.PufData" target="dev.defvs.pufsim.arbiter.PufStage.DelayedBit" relationship="TO_ONE">
+      <point x="0.0" y="-65.0" />
+      <point x="-60.0" y="53.0" />
+    </edge>
+    <edge source="dev.defvs.pufsim.arbiter.Puf" target="dev.defvs.pufsim.arbiter.PufStage" relationship="TO_MANY">
+      <point x="0.0" y="-41.0" />
+      <point x="0.0" y="41.0" />
+    </edge>
+    <edge source="dev.defvs.pufsim.arbiter.PufStage.DelayedBit" target="dev.defvs.pufsim.arbiter.PufStage" relationship="INNER_CLASS">
+      <point x="60.0" y="53.0" />
+      <point x="125.0" y="218.0" />
+      <point x="185.0" y="218.0" />
+      <point x="0.0" y="-41.0" />
+    </edge>
+    <edge source="dev.defvs.pufsim.arbiter.PufStage" target="dev.defvs.pufsim.arbiter.PufStageDelayModel" relationship="TO_ONE">
+      <point x="120.0" y="-41.0" />
+      <point x="-160.0" y="113.0" />
+    </edge>
+    <edge source="dev.defvs.pufsim.arbiter.Puf" target="dev.defvs.pufsim.arbiter.PufArbiter" relationship="TO_ONE">
+      <point x="0.0" y="-41.0" />
+      <point x="185.0" y="678.0" />
+      <point x="505.0" y="678.0" />
+      <point x="0.0" y="41.0" />
+    </edge>
+    <edge source="dev.defvs.pufsim.arbiter.PufStage" target="dev.defvs.pufsim.arbiter.PufStage.PufData" relationship="DEPENDENCY">
+      <point x="-140.0" y="-41.0" />
+      <point x="40.0" y="65.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.0611510791366907" showDependencies="true" x="301.0" y="402.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+
