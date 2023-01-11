@@ -3,9 +3,9 @@ package dev.defvs.pufsim.enrollment
 import dev.defvs.pufsim.arbiter.Puf
 import java.util.*
 
-class Client {
+class Client(jitterStdDev: Double = 0.0) {
 	/** PUF instance for the client */
-	private val puf = Puf(Random().nextLong())
+	private val puf = Puf(Random().nextLong(), jitterStdDev)
 	/** Unique identifier for the client */
 	private val clientUUID = UUID.randomUUID()
 	
@@ -14,7 +14,7 @@ class Client {
 	 * @param server the server to enroll with
 	 */
 	fun startEnrollment(server: Server) {
-		val challenges = server.getEnrollmentChallenges()
+		val challenges = server.getEnrollmentChallenges(clientUUID)
 		val responses = challenges.map { puf.getResponse(it) }
 		server.enroll(clientUUID, challenges.zip(responses))
 	}
